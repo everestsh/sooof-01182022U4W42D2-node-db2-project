@@ -29,7 +29,11 @@ router.get('/:id', md.checkCarId, async(req, res, next)=> {
 })
 
 // Err Test:  http post  :8000/api/fruits name=foo
-router.post('/', (req, res, next)=>{
+router.post('/', 
+    md.checkCarPayload,
+    md.checkVinNumberUnique,
+    md.checkVinNumberUnique,
+     (req, res, next)=>{
     try{
         res.json('post car')
     }catch(err){
