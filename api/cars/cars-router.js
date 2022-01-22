@@ -1,5 +1,6 @@
 // DO YOUR MAGIC
 
+
 const res = require('express/lib/response');
 // const {
 //     checkCarId,
@@ -19,7 +20,7 @@ router.get('/', (req, res, next)=>{
     }
 })
 
-//s Test: http get :8000/api/car/1
+// Test: http get :8000/api/car/1
 router.get('/:id', md.checkCarId, async(req, res, next)=> {
     try{
         res.json('get car by id')
@@ -29,6 +30,7 @@ router.get('/:id', md.checkCarId, async(req, res, next)=> {
 })
 
 // Err Test:  http post  :8000/api/fruits name=foo
+// Test:  http post  :8000/api/car name=foo
 router.post('/', 
     md.checkCarPayload,
     md.checkVinNumberUnique,
