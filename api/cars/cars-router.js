@@ -7,7 +7,8 @@ const {
     checkVinNumberValid,
     checkVinNumberUnique,
   } = require('./cars-middleware')
-  
+
+  // TEST: http get :9000/api/car
 router.get('/', async (req, res, next)=>{
     // res.json({message: "[GET] cars"})
     try{
@@ -17,7 +18,7 @@ router.get('/', async (req, res, next)=>{
         next(err)
     }
 })
-
+// Test: http get :9000/api/cars/1
 router.get('/:id', checkCarId, async (req, res, next)=>{
     // res.json({message: "[GET] car by id"})
     try{
